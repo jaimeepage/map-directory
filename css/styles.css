@@ -43,9 +43,7 @@ body {
 	position: relative;
 }
 
-.leaflet-control-geocoder-expanded .leaflet-control-geocoder-form {
-	padding: 5px;
-}
+
 
 .leaflet-control-geocoder-form {
   top: 0%;
@@ -55,14 +53,40 @@ body {
 
 .leaflet-control-geocoder-expanded {
   background-color: #2d2d2d;
+  border-radius: 0;
 }
 
 .leaflet-control-zoom {
   position: absolute;
-  right: -650%;
+  left: 360%;
   z-index: 99999;
+}
+
+.leaflet-control-zoom-in, .leaflet-control-zoom-out {
+  color: white !important;
+  background-color: #2d2d2d !important;
 }
 
 input {
   padding: 10px 120px 10px 10px;
+  background-color: #2d2d2d;
+  border: 0;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+input[type="submit"] {
+  background-color: #2d2d2d;
+  text-align: center !important;
+  color: white;
+  padding-left: 30px;
+  margin-right: -80px;
+  margin-left: 30px;
+  border: none;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 17px;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }

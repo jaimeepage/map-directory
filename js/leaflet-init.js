@@ -9,12 +9,12 @@ layer.addTo(map);
 
 //Add search functionality
 var options = {
-    collapsed: false, /* Whether its collapsed or not */
-    position: 'topleft', /* The position of the control */
-    text: 'Let\'s Go', /* The text of the submit button */
-    placeholder: 'Find somewhere', /* The text of the search input placeholder */
-    bounds: null, /* a L.LatLngBounds object to limit the results to */
-    email: null, /* an email string with a contact to provide to Nominatim. Useful if you are doing lots of queries */
+    collapsed: false,
+    position: 'topleft',
+    text: 'Let\'s Go',
+    placeholder: 'Find somewhere',
+    bounds: null,
+    email: null,
     callback: function (results) {
 			var bbox = results[0].boundingbox,
 				first = new L.LatLng(bbox[0], bbox[2]),
@@ -25,8 +25,6 @@ var options = {
 };
 var osmGeocoder = new L.Control.OSMGeocoder(options);
 map.addControl(osmGeocoder);
-
-
 
 //Turn on geolocation to zoom to users location
 map.locate({setView: true, maxZoom: 13});
