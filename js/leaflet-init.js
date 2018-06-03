@@ -40,13 +40,19 @@ var walkI = L.icon({
   //path to the icon
   iconUrl: 'map-icons/hiking.png',
   //size of the icon
-  iconSize: [60, 52],
-  iconAnchor: [0, 26],
+  iconSize: [32, 32],
+  iconAnchor: [0, 31],
   //point of the icon where popup window will open
   popupAnchor: [35, -26]
 });
 
-var diveI = L.icon({
+var mustDoI = L.icon({
+  iconUrl: 'map-icons/star.png',
+  iconSize: [32, 32],
+  iconAnchor: [0, 31]
+})
+
+var divingI = L.icon({
   iconUrl: '../map-icons/diver.png',
   iconSize: [52, 60],
   iconAnchor: [26, 60],
@@ -54,25 +60,37 @@ var diveI = L.icon({
 });
 
 
-//Add location markers to the map
-//var pk = L.marker([latitude, longtitude], {icon:layerName}).addTo(map);
-var p1 = L.marker([-35.287905, 174.088197], {icon: walkI}).addTo(map);
+//Add location markers to the map - link to json files
 
-//Collect HTML elements in variables to display information
-const placeName = getElementById('place-name__holder');
-const imageSrc = getElementById('image__holder').src;
-const description = getElementById('description__holder');
-const linkHref = getElementById('link__holder').href;
-const linkText = getElementById('link__holder');
+$.getJSON("js/map-points.geojson",function(data){
+  var mustdoLayer = L.geoJson(data, {
+    pointToLayer: function(feature, latlng) {
+                return L.marker(latlng, {
+                    icon: mustDoI
+                }).on('click', function() {
+                  var closeBtn = document.getElementById('close');
+                  var sidePanel = document.getElementById('sidePanel');
+                  var placeName = document.getElementById('placeName');
+                  var image = document.getElementById('image__holder');
+                  var description = document.getElementById('description__holder');
+                  var link = document.getElementById('link__holder');
+                  var layerName = document.getElementById('layerName');
+                  sidePanel.style.width = "25%";
+                  closeBtn.style.display = "block";
+                  layerName.innerHTML = feature.properties.layerName;
+                  placeName.innerHTML = feature.properties.name;
+                  image.style.backgroundImage = "url('../" + feature.properties.image + "')";
+                  description.innerHTML = feature.properties.description;
+                  link.href = feature.properties.link;
+                  link.innerHTML = feature.properties.linkText;
+                });
+            }
+  });
+   // add GeoJSON layer to the map once the file is loaded
+   mustdoLayer.addTo(map);
+ });
 
-//When a user clicks on a marker
-
-//Display the name in the title
-
-//Display the image in the image placeholder
-
-//Display the description in description-placeholder
-
-//Display link in link-holder
-
-//Display link text
+ function closeSide() {
+    document.getElementById("sidePanel").style.width = "0";
+    document.getElementById('close').style.display = "none";
+ }

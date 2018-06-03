@@ -1,0 +1,43 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "must-do",
+        "name": "Hobbiton Movie Set",
+        "image": "img/hobbiton.jpg",
+        "description": "Just outside of the Waikato town of Matamata, Sir Peter Jackson discovered the perfect place to create The Shire and village of Hobbiton. To this day, the movie set remains and is a spectacular place to visit, and it's not just for fans of The Lord of the Rings and The Hobbit Trilogies.",
+        "link": "https://www.hobbitontours.com/en/our-tours/hobbiton-movie-set-tour/",
+        "linkText": "Book Now",
+        "layerName": "Must Do"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.68119287490845,
+          -37.85806622952445
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "must-do",
+        "name": "White Island",
+        "image": "img/whiteisland.jpg",
+        "description": "Off the North Island’s Bay of Plenty, White Island appears on the horizon as a thick plume of smoke rising from the Pacific Ocean, the first visible sign of one of New Zealand’s most fascinating natural attractions. From Whakatane, just south of Tauranga, take a boat trip or helicopter out to the island for an otherworldly experience.",
+        "link": "https://whiteisland.rezdy.com/37784/white-island-tour",
+        "linkText": "Book Now",
+        "layerName": "Must Do"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          177.1816635131836,
+          -37.520754829257
+        ]
+      }
+    }
+  ]
+}

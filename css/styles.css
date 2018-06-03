@@ -3,6 +3,12 @@ body {
   margin: 0;
 }
 
+.img-fluid {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
 #mainMap {
   height: 100vh;
   width: 100vw;
@@ -43,8 +49,6 @@ body {
 	position: relative;
 }
 
-
-
 .leaflet-control-geocoder-form {
   top: 0%;
   left: 5%;
@@ -76,10 +80,6 @@ input {
   letter-spacing: 0.1rem;
 }
 
-input:focus {
-  outline: 0;
-}
-
 input[type="submit"] {
   background-color: #2d2d2d;
   text-align: center !important;
@@ -93,4 +93,79 @@ input[type="submit"] {
   padding-bottom: 17px;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
+}
+
+/*------SIDE PANEL-------*/
+#sidePanel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 999;
+  width: 0;
+}
+
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 3%;
+  color: white;
+  z-index: 99;
+  text-decoration: none;
+  font-size: 25px;
+  display: none;
+}
+
+#placeName {
+  color: white;
+  font-weight: 200;
+  letter-spacing: 0.1rem;
+  margin-top: 0;
+  position: absolute;
+  bottom: 0;
+  left: 3%;
+  font-family: 'Playfair Display', serif;
+}
+
+#layerName {
+  position: absolute;
+  bottom: 10%;
+  left: 3%;
+  color: white;
+  font-family: 'Lato';
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 0.8rem;
+}
+
+#image__holder {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 40%;
+  position: relative;
+}
+
+#description__holder {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 0.04rem;
+  font-weight: 100;
+  width: 90%;
+  margin: 20px auto;
+}
+
+#link__holder {
+  color: white;
+  background-color: black;
+  text-decoration: none;
+  font-family: sans-serif;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  display: block;
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+  font-weight: 100;
 }
