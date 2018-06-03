@@ -46,7 +46,7 @@ var walkI = L.icon({
   popupAnchor: [35, -26]
 });
 
-var divingI = L.icon({
+var diveI = L.icon({
   iconUrl: '../map-icons/diver.png',
   iconSize: [52, 60],
   iconAnchor: [26, 60],
@@ -55,5 +55,24 @@ var divingI = L.icon({
 
 
 //Add location markers to the map
-
+//var pk = L.marker([latitude, longtitude], {icon:layerName}).addTo(map);
 var p1 = L.marker([-35.287905, 174.088197], {icon: walkI}).addTo(map);
+
+//Collect HTML elements in variables to display information
+const placeName = getElementById('place-name__holder');
+const imageSrc = getElementById('image__holder').src;
+const description = getElementById('description__holder');
+const linkHref = getElementById('link__holder').href;
+const linkText = getElementById('link__holder');
+
+//When a user clicks on a marker
+
+//Display the name in the title
+
+//Display the image in the image placeholder
+
+//Display the description in description-placeholder
+
+//Display link in link-holder
+
+//Display link text
